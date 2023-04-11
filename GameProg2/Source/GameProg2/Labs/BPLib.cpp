@@ -28,3 +28,17 @@ FVector UBPLib::MoveTowards(const FVector& startPos, const FVector& endPos, floa
 
 
 }
+bool UBPLib::ToggleMovement(bool isMoving)
+{
+	if(isMoving)
+	{
+		//Stop moving
+
+	}
+	else 
+	{
+		//Start moving
+
+	}
+	return !isMoving;
+}

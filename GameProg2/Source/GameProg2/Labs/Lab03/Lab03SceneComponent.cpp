@@ -28,7 +28,15 @@ void ULab03SceneComponent::BeginPlay()
 void ULab03SceneComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	float theta = DeltaTime * speed;
 
+	FRotator actorRot = GetOwner()->GetActorRotation();
+	actorRot.Yaw = actorRot.Yaw + theta;
+	GetOwner()->SetActorRotation(actorRot);
+	if (int(actorRot.Yaw) % 360 == 0) 
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Full Roation"));
+	}
 	// ...
 }
 
