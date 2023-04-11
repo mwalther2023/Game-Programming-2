@@ -25,8 +25,8 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	FVector start;
 	UPROPERTY(EditAnywhere)
-	float speed;
+	float speed = 5;
 	UPROPERTY(EditAnywhere)
-	float maxDist;
+	float maxDist = 100;
 		
 };

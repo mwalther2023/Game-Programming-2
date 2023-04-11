@@ -15,8 +15,7 @@ class GAMEPROG2_API ULab03SceneComponent : public USceneComponent
 public:	
 	// Sets default values for this component's properties
 	ULab03SceneComponent();
-	UPROPERTY(VisibleAnywhere)
-		float speed;
+	
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -24,6 +23,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
+	UPROPERTY(EditAnywhere)
+		float speed;
 		
 };

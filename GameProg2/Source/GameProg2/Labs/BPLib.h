@@ -16,6 +16,8 @@ class GAMEPROG2_API UBPLib : public UBlueprintFunctionLibrary
 	
 public:
 	static FVector MoveTowards(const FVector& startPos, const FVector& endPos, float maxDist);
+	bool ToggleMovement(bool isMoving);
+	
 private:
 	float fooVal;
 };
