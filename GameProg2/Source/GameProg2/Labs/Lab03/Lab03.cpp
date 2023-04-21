@@ -17,8 +17,8 @@ ALab03::ALab03()
 	SetRootComponent(SceneComponent);
 
 	MyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Cube Mesh"));
-	SetRootComponent(MyMesh);
-	
+	/*SetRootComponent(MyMesh);*/
+	MyMesh->AttachToComponent(SceneComponent, FAttachmentTransformRules::KeepRelativeTransform);
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> mesh(TEXT("/Script/Engine.StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
 

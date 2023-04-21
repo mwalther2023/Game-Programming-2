@@ -33,6 +33,7 @@ void ULab03SceneComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 	FRotator actorRot = GetOwner()->GetActorRotation();
 	actorRot.Yaw = actorRot.Yaw + theta;
 	GetOwner()->SetActorRotation(actorRot);
+	//GetOwner()->GetName();
 	if (int(actorRot.Yaw) % 360 == 0) 
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Full Roation"));

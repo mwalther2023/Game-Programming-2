@@ -29,14 +29,14 @@ void UBounceSceneComponent::BeginPlay()
 void UBounceSceneComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	
-	FVector act = GetOwner()->GetActorLocation();
+	FTransform transform = GetOwner()->GetActorTransform();
+	FVector act = transform.GetLocation();
 	//UWorld w;
 	float t = GetWorld()->UWorld::GetTimeSeconds();
 	act.Z = sin(speed * t) * maxDist + start.Z+100;
 
 	GetOwner()->SetActorLocation(act);
-	UE_LOG(LogTemp, Warning, TEXT("Time: Z: %f"), DeltaTime);
+	//UE_LOG(LogTemp, Warning, TEXT("Time: Z: %f"), DeltaTime);
 	//UE_LOG(LogTemp, Warning, TEXT("Move: Z: %f"), move.Z);
 	// ...
 }
