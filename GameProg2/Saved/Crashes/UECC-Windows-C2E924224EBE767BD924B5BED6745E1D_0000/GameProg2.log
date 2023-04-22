@@ -1248,11 +1248,3 @@ Error: CDO Constructor (ControllerPawn): Failed to find /Game/Labs/Lab6/FlyMap.F
 [2023.04.22-19.42.33:884][958]LogFileHelpers: Loading map 'ThirdPersonMap' took 0.330
 [2023.04.22-19.42.46:286][675]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Labs/Lab1/Lab_Cube_Blueprint.Lab_Cube_Blueprint
 [2023.04.22-19.42.46:288][675]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
-[2023.04.22-19.42.48:288][675]LogStall: Stall detector 'UAssetEditorSubsystem::OpenEditorForAsset' exceeded budget of 2.000000s, reporting...
-[2023.04.22-19.42.49:276][675]LogStall: Stall detector 'UAssetEditorSubsystem::OpenEditorForAsset' report submitted, and took 0.049567s
-[2023.04.22-19.42.49:321][675]LogStall: Stall detector 'UAssetEditorSubsystem::OpenEditorForAsset' complete in 0.001434s (0.091789s overbudget)
-[2023.04.22-19.42.49:388][675]LogSlate: Took 0.004223 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
-[2023.04.22-19.42.49:513][675]LogAutomationController: Ignoring very large delta of 3.29 seconds in calls to FAutomationControllerManager::Tick() and not penalizing unresponsive tests
-[2023.04.22-19.42.52:936][846]LogSlate: Window 'Lab_Cube_Blueprint' being destroyed
-[2023.04.22-19.47.34:116][683]LogWorld: UWorld::CleanupWorld for World_3, bSessionEnded=true, bCleanupResources=true
-[2023.04.22-19.47.34:116][683]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated

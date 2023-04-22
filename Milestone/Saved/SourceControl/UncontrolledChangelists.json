@@ -6,14 +6,6 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/StarterContent/Blueprints/Blueprint_CeilingLight.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/0I/VIQQWOEJKSKV1EK1XGX3EY.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/MO/72II2GSLK9VS0ULW9SACWH.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/CI/KST702KSCRZWYV56G3VJBD.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/P3/O43ETCZTFMLWWH1CJ941H2.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/HE/U35NZS5A9W1UXP1E3FF2GW.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/WU/NB37RT5Q32Z8MJWD8BD2SO.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/QS/VHQF8JWOATZI5V3ZVY5YTM.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/HF/YFYBQ72OYLHJQS0TSSXGBV.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/4I/I0RF3RMSTUTUXXI2QFN563.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/9W/EYOUX70TDDGP25R59O5O9H.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/4M/4YBPAPHU5BWVDCYUVMFS32.uasset",
@@ -27,7 +19,6 @@
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/1X/TXC3ENO1AJG238H0NRDNGR.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/LT/P73SYO8LPZHRNTGVTJAY5V.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/SD/E10FWPAK84RWEWQA2BB3PJ.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/07/2G85UFN6VXO69A3MBNAM9E.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/DB/VY7XCBYR4RSWTCNYOOQA28.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/57/CXF2I6YKO3BO8M3G2K2ZN7.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/X8/R7YIJ14P347XNF5DT9LMDZ.uasset",
@@ -110,7 +101,17 @@
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalObjects__/Level/Milestone1/0/1V/PWE1TX4R47JABJ2JLWJ1H1.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/Level/Milestone1/0/C5/ZFZOM3K2DRE9BH5XZMJIGS.uasset",
 				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/Level/Milestone1/C/R2/4A0B1IO1UGA7S9HY0R6ZMB.uasset",
-				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/Level/Milestone1/E/UQ/7V0TW9045DL5S9MTUIL2TN.uasset"
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/Level/Milestone1/E/UQ/7V0TW9045DL5S9MTUIL2TN.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/Level/Milestone1/D/1Z/B4AGMQ1LGWZXHLLS6LZZSY.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/0I/VIQQWOEJKSKV1EK1XGX3EY.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/MO/72II2GSLK9VS0ULW9SACWH.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/CI/KST702KSCRZWYV56G3VJBD.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/P3/O43ETCZTFMLWWH1CJ941H2.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/HE/U35NZS5A9W1UXP1E3FF2GW.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/WU/NB37RT5Q32Z8MJWD8BD2SO.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/QS/VHQF8JWOATZI5V3ZVY5YTM.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/HF/YFYBQ72OYLHJQS0TSSXGBV.uasset",
+				"C:/Users/matth/Desktop/Matthew's Notes/Game Programming 2/gameprog2/Milestone/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/07/2G85UFN6VXO69A3MBNAM9E.uasset"
 			]
 		}
 	]
