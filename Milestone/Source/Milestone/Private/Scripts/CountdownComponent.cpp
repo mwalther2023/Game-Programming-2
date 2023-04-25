@@ -34,7 +34,7 @@ void UCountdownComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	if (timeLeft <= 0)
 	{
 		//Stop game
-
+		WARN("Game Over: Time ran out")
 	}
 	else
 	{

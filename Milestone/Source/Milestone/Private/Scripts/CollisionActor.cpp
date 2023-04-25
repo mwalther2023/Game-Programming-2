@@ -44,7 +44,8 @@ void ACollisionActor::Tick(float DeltaTime)
 
 void ACollisionActor::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Overlap!"));
+	//UE_LOG(LogTemp, Warning, TEXT("Overlap!"));
+	UE_LOG(LogTemp, Warning, TEXT("Congrats you reached the end!"));
 	if (Cast<AMilestoneCharacter>(OtherActor))
 	{
 		// Do something to the Player Character.
