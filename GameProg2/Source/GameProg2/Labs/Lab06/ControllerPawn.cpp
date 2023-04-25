@@ -7,6 +7,8 @@
 #include "GameProg2/GameProg2.h"
 #include "EnhancedInputSubsystems.h"
 //#include "PawnMovementComponent.h"
+//#include "CollidingPawnMovementComponent.h"
+
 // Sets default values
 AControllerPawn::AControllerPawn()
 {
@@ -63,7 +65,29 @@ void AControllerPawn::BeginPlay()
 void AControllerPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	if (MoveBool)
+	{
+		
+		FVector loc = GetActorLocation();
+		FVector forward = GetActorForwardVector();
+		
+		
+		LOG("Moving Forward: %f", loc.X)
+		if (moveSpeed < maxMoveSpeed)
+		{
+			forward *= moveSpeed;
+			moveSpeed += 1;
+		}
+		else
+		{
+			forward *= maxMoveSpeed;
+		}
+		SetActorLocation(loc + forward * DeltaTime);
+	}
+	else
+	{
+		moveSpeed = 1;
+	}
 }
 
 // Called to bind functionality to input
@@ -85,8 +109,9 @@ void AControllerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 }
 void AControllerPawn::Move(const struct FInputActionInstance& Instance)
 {
-	lastInput = Instance.GetValue().Get<FVector2D>();
+	lastInput = Instance.GetValue().Get<FVector>();
 	LOG("Move Input: (%f, %f)", lastInput.X, lastInput.Y);
+	MoveBool = !MoveBool;
 
 	// note, OurMovementComponent is a pointer to the movement component you created for this pawn,
 	// also notice how we expect UpdatedComponent to point to our RootComponent for this code to execute!
@@ -99,6 +124,59 @@ void AControllerPawn::Move(const struct FInputActionInstance& Instance)
 }
 void AControllerPawn::Steer(const struct FInputActionInstance& Instance)
 {
-	lastInput = Instance.GetValue().Get<FVector2D>();
-	LOG("Move Input: (%f, %f)", lastInput.X, lastInput.Y);
+	lastInput = Instance.GetValue().Get<FVector>();
+	LOG("Steer Input: (%f, %f, %f)", lastInput.X, lastInput.Y, lastInput.Z);
+	FRotator rot = GetActorRotation();
+	FVector forward = GetActorForwardVector();
+	FQuat pawnQuat = GetActorQuat();
+
+	if (lastInput.Y > 0 || lastInput.Y < 0)
+	{
+		FQuat pitchRotation = FQuat(GetActorRightVector(), lastInput.Y * (3.14/180));
+		pawnQuat = pitchRotation * pawnQuat;
+	}
+	else if (lastInput.X > 0 || lastInput.X < 0)
+	{
+		FQuat yawRotation = FQuat(GetActorUpVector(), lastInput.X * (3.14 / 180));
+		pawnQuat = yawRotation * pawnQuat;
+	}
+	else if (lastInput.Z > 0 || lastInput.Z < 0)
+	{
+		FQuat rollRotation = FQuat(GetActorForwardVector(), lastInput.Z * (3.14 / 180));
+		pawnQuat = rollRotation * pawnQuat;
+	}
+	SetActorRotation(pawnQuat);
+	//rot.Pitch -= lastInput.X;
+
+	//// W is pressed
+	//if (lastInput.X == 1)
+	//{
+	//	rot.Pitch -= 1;
+	//}
+	//// S is pressed
+	//else if (lastInput.X == -1)
+	//{
+	//	rot.Pitch += 1;
+	//}
+	//// A is pressed
+	//else if (lastInput.Y == -1)
+	//{
+	//	rot.Yaw -= 1;
+	//}
+	//// D is pressed
+	//else if (lastInput.Y == 1)
+	//{
+	//	rot.Yaw += 1;
+	//}
+	//// E is Pressed
+	//else if (lastInput.Z == 1)
+	//{
+	//	rot.Roll += 1;
+	//}
+	//// Q is Pressed
+	//else if (lastInput.Z == -1)
+	//{
+	//	rot.Roll -= 1;
+	//}
+	
 }

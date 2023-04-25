@@ -32,13 +32,13 @@ ACollectableActor::ACollectableActor()
 	/*SetRootComponent(StaticMesh);*/
 	StaticMesh->AttachToComponent(TriggerBox, FAttachmentTransformRules::KeepRelativeTransform);
 
-	auto mesh = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere"));
+	auto mesh = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("/Game/Level/Shape_Sphere.Shape_Sphere"));
 	if (mesh.Succeeded())
 	{
 		StaticMesh->SetStaticMesh(mesh.Object);
 	}
 
-	static ConstructorHelpers::FObjectFinder<UMaterial> FoundMaterial(TEXT("/Game/StarterContent/Materials/M_Tech_Hex_Tile_Pulse.M_Tech_Hex_Tile_Pulse"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> FoundMaterial(TEXT("/Game/Level/M_Tech_Hex_Tile_Pulse.M_Tech_Hex_Tile_Pulse"));
 	if (FoundMaterial.Succeeded())
 	{
 		StoredMaterial = FoundMaterial.Object;

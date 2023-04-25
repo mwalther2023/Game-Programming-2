@@ -32,20 +32,22 @@ public:
 		TObjectPtr<class UPawnMovementComponent> OurMovementComponent;
 	// Maximum speed to move
 	UPROPERTY(EditAnywhere)
-		float maxMoveSpeed;
-
+		float maxMoveSpeed = 10;
+	float moveSpeed = 1;
 	// Define a Move function
 	virtual void Move(const struct FInputActionInstance& Instance);
 	virtual void Steer(const struct FInputActionInstance& Instance);
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	FVector2D lastInput;
+	FVector lastInput;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	bool MoveBool = false;
 
 };
