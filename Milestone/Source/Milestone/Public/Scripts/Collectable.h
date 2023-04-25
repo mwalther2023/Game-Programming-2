@@ -23,6 +23,13 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-		
+	// The actual component
+	//UPROPERTY(EditAnywhere, Category = "Components") // This is necessary if you want to change collision settings in the editor
+	//	class USphereComponent* TriggerBox;
+	//// The functions to call on overlap start and end
+	//UFUNCTION()
+	//	void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	//UFUNCTION()
+	//	void OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	//	
 };
