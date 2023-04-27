@@ -53,6 +53,7 @@ SourceArt/**/*.tga
 Binaries/
 Plugins/*/Binaries/*
 Intermediate/
+Saved/
 StarterContent/
 
 # Whitelist PakBlacklist-.txt files
