@@ -28,7 +28,9 @@ void UQuatRotComponent::BeginPlay()
 void UQuatRotComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
+	FQuat actorRot = GetOwner()->GetActorQuat();
+	FQuat rot = FQuat(RotationAxis, RotationSpeed * (3.14/180));
+	GetOwner()->SetActorRotation(actorRot * rot);
 	// ...
 }
 
