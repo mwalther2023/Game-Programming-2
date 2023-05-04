@@ -17,6 +17,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	virtual void HandleMatchHasStarted() override;
+	virtual void HandleMatchHasEnded() override;
 public:	
 	AMilestoneMode();
 	virtual void Tick(float DeltaTime) override;

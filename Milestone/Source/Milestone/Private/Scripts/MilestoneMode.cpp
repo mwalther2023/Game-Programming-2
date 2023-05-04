@@ -31,10 +31,17 @@ void AMilestoneMode::BeginPlay()
 	Super::BeginPlay();
 
 }
-
+void AMilestoneMode::HandleMatchHasEnded()
+{
+	FString msg = "GameMode | MatchEnd: Game Has Ended";
+	UBPLib::BlueprintWarn(msg);
+}
 void AMilestoneMode::HandleMatchHasStarted()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Match started!"));
+	FString msg = "MatchBegin: Game Start";
+	UBPLib::BlueprintWarn(msg);
+
+	
 }
 
 void AMilestoneMode::DoStuff()
@@ -60,5 +67,10 @@ void AMilestoneMode::Tick(float DeltaTime)
 	//	UBPLib::BlueprintWarn(msg);
 
 	//}
-	// ...
+	TObjectPtr<AMilestoneStateOfGame> gs = GetGameState<AMilestoneStateOfGame>();
+	if (gs->HasMatchEnded())
+	{
+		FString msg = "Gamemode Tick: Game Has Ended";
+		UBPLib::BlueprintWarn(msg);
+	}
 }
