@@ -16,6 +16,8 @@ class MILESTONE_API AMilestoneMode : public AGameModeBase
 	
 public:	
 	AMilestoneMode();
-
+	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditAnywhere)
+		float Time = 30;
 	void DoStuff();
 };

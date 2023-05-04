@@ -59,7 +59,7 @@ void ACollectableActor::BeginPlay()
 // Called every frame
 void ACollectableActor::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+	
 
 }
 
