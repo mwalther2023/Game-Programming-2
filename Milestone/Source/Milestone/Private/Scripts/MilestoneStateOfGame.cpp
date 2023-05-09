@@ -17,7 +17,11 @@ void AMilestoneStateOfGame::Tick(float DeltaTime)
 	if (timeLeft <= 0)
 	{
 		//Stop game
-		SetMatchState(FName("WaitingPostMatch"));
+		if (GetMatchState() != FName("WaitingPostMatch"))
+		{
+			SetMatchState(FName("WaitingPostMatch"));
+		}
+		
 		//FString msg = "Gamestate | Game Over: Time ran out";
 		//UBPLib::BlueprintWarn(msg);
 		//HandleMatchHasEnded();

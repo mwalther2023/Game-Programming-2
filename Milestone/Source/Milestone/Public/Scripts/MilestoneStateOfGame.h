@@ -17,6 +17,7 @@ class MILESTONE_API AMilestoneStateOfGame : public AGameState
 public:
 	AMilestoneStateOfGame();
 	virtual void Tick(float DeltaTime) override;
+
 	UPROPERTY(EditAnywhere)
-		float Time = 30;
+		float Time = 60;
 };

@@ -19,5 +19,6 @@ public:
 		static void BlueprintLog(FString s);
 	UPARAM(ref, DisplayName "msg")
 		static void BlueprintWarn(FString s);
-
+	static FVector MoveTowards(const FVector& startPos, const FVector& endPos, float maxDist);
+	bool ToggleMovement(bool isMoving);
 };

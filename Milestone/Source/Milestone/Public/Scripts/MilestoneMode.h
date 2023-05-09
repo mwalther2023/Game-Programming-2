@@ -16,12 +16,13 @@ class MILESTONE_API AMilestoneMode : public AGameMode
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	virtual void HandleMatchHasStarted() override;
-	virtual void HandleMatchHasEnded() override;
+	//virtual void HandleMatchHasStarted() override;
+	//virtual void HandleMatchHasEnded() override;
 public:	
 	AMilestoneMode();
 	virtual void Tick(float DeltaTime) override;
 	UPROPERTY(EditAnywhere)
 		float Time = 30;
 	void DoStuff();
+	TObjectPtr<AController> control;
 };
