@@ -4,6 +4,8 @@
 #include "Scripts/CollisionActor.h"
 #include "Components/BoxComponent.h"
 #include "Milestone/MilestoneCharacter.h"
+#include <Milestone/Public/Scripts/MilestoneStateOfGame.h>
+#include <Milestone/Public/Scripts/BPLib.h>
 
 // Sets default values
 ACollisionActor::ACollisionActor()
@@ -45,11 +47,15 @@ void ACollisionActor::Tick(float DeltaTime)
 void ACollisionActor::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//UE_LOG(LogTemp, Warning, TEXT("Overlap!"));
-	UE_LOG(LogTemp, Warning, TEXT("Congrats you reached the end!"));
+	//UE_LOG(LogTemp, Warning, TEXT("Congrats you reached the end!"));
+	FString msg = "Congrats you reached the end!";
+	UBPLib::BlueprintWarn(msg);
+	TObjectPtr<AMilestoneStateOfGame> gs = GetWorld()->GetGameState<AMilestoneStateOfGame>();
+	gs->SetMatchState(FName("WaitingPostMatch"));
 	if (Cast<AMilestoneCharacter>(OtherActor))
 	{
 		// Do something to the Player Character.
-		UE_LOG(LogTemp, Warning, TEXT("Player Overlap: %s"), *OtherActor->GetName());
+		//UE_LOG(LogTemp, Warning, TEXT("Player Overlap: %s"), *OtherActor->GetName());
 		GetWorld()->BeginPlay();
 		// For example, get the camera following the player
 		AMilestoneCharacter* playerChar = Cast<AMilestoneCharacter>(OtherActor);

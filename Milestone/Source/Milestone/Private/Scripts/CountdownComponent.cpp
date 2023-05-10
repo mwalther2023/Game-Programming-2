@@ -3,6 +3,8 @@
 
 #include "Scripts/CountdownComponent.h"
 #include "Milestone/Milestone.h"
+#include <Milestone/Public/Scripts/BPLib.h>
+
 // Sets default values for this component's properties
 UCountdownComponent::UCountdownComponent()
 {
@@ -34,11 +36,15 @@ void UCountdownComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	if (timeLeft <= 0)
 	{
 		//Stop game
-		WARN("Game Over: Time ran out")
+		FString msg = "Game Over: Time ran out";
+		UBPLib::BlueprintWarn(msg);
 	}
 	else
 	{
-		WARN("Time Left: %f", timeLeft)
+		//FString t = ;
+		FString msg = "Time Left : " + FString::SanitizeFloat(timeLeft);
+		UBPLib::BlueprintWarn(msg);
+
 	}
 	// ...
 }
