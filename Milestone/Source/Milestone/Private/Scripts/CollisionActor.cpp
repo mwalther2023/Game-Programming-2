@@ -6,6 +6,7 @@
 #include "Milestone/MilestoneCharacter.h"
 #include <Milestone/Public/Scripts/MilestoneStateOfGame.h>
 #include <Milestone/Public/Scripts/BPLib.h>
+#include "Components/AudioComponent.h"
 
 // Sets default values
 ACollisionActor::ACollisionActor()
@@ -26,12 +27,14 @@ ACollisionActor::ACollisionActor()
 	TriggerBox->SetCollisionProfileName(FName("Trigger"));
 	// Make sure the trigger
 	TriggerBox->SetGenerateOverlapEvents(true);
+	AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("Audio"));
 }
 
 // Called when the game starts or when spawned
 void ACollisionActor::BeginPlay()
 {
 	Super::BeginPlay();
+	AudioComponent->Stop();
 	// Set up begin and end overlap events
 	TriggerBox->OnComponentBeginOverlap.AddDynamic(this, &ACollisionActor::OnBeginOverlap);
 	TriggerBox->OnComponentEndOverlap.AddDynamic(this, &ACollisionActor::OnEndOverlap);
@@ -52,6 +55,7 @@ void ACollisionActor::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, A
 	UBPLib::BlueprintWarn(msg);
 	TObjectPtr<AMilestoneStateOfGame> gs = GetWorld()->GetGameState<AMilestoneStateOfGame>();
 	gs->SetMatchState(FName("WaitingPostMatch"));
+	AudioComponent->Play();
 	if (Cast<AMilestoneCharacter>(OtherActor))
 	{
 		// Do something to the Player Character.

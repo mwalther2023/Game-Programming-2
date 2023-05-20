@@ -34,6 +34,7 @@ class MILESTONE_API APlayerCharacter : public ACharacter
 	/** Look Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 		class UInputAction* LookAction;
+
 public:
 	// Sets default values for this character's properties
 	APlayerCharacter();
@@ -62,4 +63,10 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+		TObjectPtr<class UInputAction> SoundAction;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TObjectPtr<class UAudioComponent> AudioComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TObjectPtr<class UAudioComponent> BGAudioComponent;
 };
