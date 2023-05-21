@@ -12,7 +12,7 @@ AMilestoneStateOfGame::AMilestoneStateOfGame()
 void AMilestoneStateOfGame::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	float timeLeft = Time - GetWorld()->UWorld::GetTimeSeconds();
+	timeLeft = Time - GetWorld()->UWorld::GetTimeSeconds();
 
 	if (timeLeft <= 0)
 	{
