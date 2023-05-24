@@ -13,6 +13,7 @@
 #include "InputMappingContext.h"
 #include "Kismet/GameplayStatics.h"
 #include "Milestone/Milestone.h"
+#include "Components/AudioComponent.h"
 // Sets default values
 APlayerCharacter::APlayerCharacter()
 {
@@ -81,6 +82,25 @@ APlayerCharacter::APlayerCharacter()
 	{
 		DefaultMappingContext = input.Object;
 	}
+	//auto s = ConstructorHelpers::FObjectFinder<UInputAction>(TEXT("/Game/Labs/Lab8/IA_Sound.IA_Sound"));
+	//if (s.Succeeded())
+	//{
+	//	SoundAction = action.Object;
+	//}
+	AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("Audio"));
+	BGAudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("BG Audio"));
+	auto bg = ConstructorHelpers::FObjectFinder<USoundBase>(TEXT("/Game/Level/Sounds/BG_Music.BG_Music"));
+	if (bg.Succeeded())
+	{
+		BGAudioComponent->Sound = bg.Object;
+	}
+	auto aud = ConstructorHelpers::FObjectFinder<USoundBase>(TEXT("/Game/Level/Sounds/Walk.Walk"));
+	if (aud.Succeeded())
+	{
+		AudioComponent->Sound = aud.Object;
+	}
+	Tags.Add(FName("Player"));
+	//GetOwner()->Tags.Add(FName("Player"));
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
@@ -89,6 +109,8 @@ APlayerCharacter::APlayerCharacter()
 void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	BGAudioComponent->Play();
+	AudioComponent->Stop();
 	//Add Input Mapping Context
 	if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
 	{
@@ -116,7 +138,8 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 		//Jumping
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
-
+		//WARN("Binding Sound action");
+		//EnhancedInputComponent->BindAction(SoundAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Move);
 		//Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Move);
 
@@ -130,10 +153,11 @@ void APlayerCharacter::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
-
+	AudioComponent->Play();
 	if (Controller != nullptr)
 	{
 		// find out which way is forward
+		
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
 

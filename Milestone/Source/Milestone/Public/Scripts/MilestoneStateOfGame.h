@@ -18,6 +18,10 @@ public:
 	AMilestoneStateOfGame();
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 		float Time = 60;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		float MaxTime = 180;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		float timeLeft = 60;
 };
