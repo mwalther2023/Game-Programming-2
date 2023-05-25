@@ -35,5 +35,5 @@ protected:
 	virtual UObjectiveCollection* SetupQuest();
 
 	// Populate the objectives and sub objectives of the RootObjectiveCollection
-	virtual void PopulateObjectives();
+	virtual void PopulateObjectives(UObjectiveCollection* RootObjCol);
 };
