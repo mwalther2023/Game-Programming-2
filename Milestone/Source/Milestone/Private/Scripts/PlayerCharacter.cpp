@@ -103,6 +103,7 @@ APlayerCharacter::APlayerCharacter()
 	//GetOwner()->Tags.Add(FName("Player"));
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+	
 }
 
 // Called when the game starts or when spawned
@@ -119,6 +120,8 @@ void APlayerCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
+	APlayerController* PC = Cast<APlayerController>(UGameplayStatics::GetPlayerController(GEngine->GameViewport->GetWorld(), 0));
+	PC->SetInputMode(FInputModeGameOnly());
 }
 
 // Called every frame
